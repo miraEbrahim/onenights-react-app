@@ -34,7 +34,7 @@ class PlacesList extends Component {
     }
 
     showingPlaces.sort(sortBy('name'));
-
+  //PlacesList.js-To-DO-LINE-37*** limit places result to fit page height
     return (
        
             <div className="row vertical-align">
@@ -71,16 +71,13 @@ class PlacesList extends Component {
             <ol className="place-list">
                 {showingPlaces.map(place => (
                     <li key={place.id} className="place-list-item">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">{place.name}</h5>
-                            <p class="card-text">{place.vicinity}</p>
-                            <p class="card-text"><small class="text-muted">{place.price_leve}</small></p>
-                            <p class="card-text"><small class="text-muted">{place.rating}</small></p>
-                            <p class="card-text"><small class="text-muted">{place.user_ratings_total}</small></p>
-                            
-                        </div>
-                        {/*<img class="card-img-bottom" src="..." alt="Card image cap">*/}
+                        <div className="card w-75">
+                            <div className="card-body">
+                                <h5 className="card-title">{place.name}</h5>
+                                <p className="card-text">{place.vicinity}</p>
+                                <p className="card-text"><small class="text-muted">{place.rating}</small></p>
+                                <a href="#" className="btn btn-primary">Button</a>
+                            </div>
                         </div>
                     </li>
                 ))}
