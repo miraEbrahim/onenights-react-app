@@ -10,9 +10,15 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <PlacesList places={this.state.places} />
-        <Map />
+      <div className="places-map-container">
+        <div className="row">
+          <div className="col-4">
+          <PlacesList places={this.state.places} />
+          </div>
+          <div className="col-8">
+          <Map />
+          </div>
+        </div>
       </div>
     );
   }
