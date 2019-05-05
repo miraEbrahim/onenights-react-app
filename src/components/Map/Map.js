@@ -6,23 +6,26 @@ import { faSearch, faBars, faTimes, faDirections, faMoneyBill } from '@fortaweso
 import { fab } from '@fortawesome/free-brands-svg-icons';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { G_API, harrods } from './MapData';
+import { G_API, harrods, london } from './MapData';
 import './mapstyle.css'
 import { mapDarkStyle } from './MapStyle';
+import { placesDB } from '../Places/PlacesDB';
 
 
 library.add( fab, faSearch, faBars, faTimes , faDirections, faMoneyBill );
 
 class Map extends React.Component {
+    
   constructor(props) {
     super();
     this.state = {
-        map:""
+        map: ""
     };
   }
 
   componentWillReceiveProps({isScriptLoadSucceed}){
     if (isScriptLoadSucceed) {
+        let json = placesDB;
       const map = new window.google.maps.Map(document.getElementById('map'), {
           zoom: 15,
           center: harrods,
@@ -30,6 +33,80 @@ class Map extends React.Component {
       });
       this.setState({map:map});
 
+  // Looping through all the entries from the JSON data
+  for(var i = 0; i < json.length; i++) {
+    
+    // Current object
+    var obj = json[i];
+
+    // Adding a new marker for the object
+    var marker = new window.google.maps.Marker({
+      position: new window.google.maps.LatLng(obj.geometry.location.lat,obj.geometry.location.lng),
+      map: map,
+      title: obj.name // this works, giving the marker a title with the correct title
+    });
+    
+    // Adding a new info window for the object
+    var clicker = addClicker(marker, obj.title);
+    
+ 
+
+
+
+  } // end loop
+  
+  
+  // Adding a new click event listener for the object
+  function addClicker(marker, content) {
+    window.google.maps.event.addListener(marker, 'click', function() {
+        let infowindow = new window.google.maps.InfoWindow();
+        let contentString = `This is ${obj.name}`;
+
+           
+      if (infowindow) {infowindow.close();}
+      infowindow = new window.google.maps.InfoWindow({content: contentString});
+      infowindow.open(map, marker);
+      
+    });
+
+  }
+
+
+
+    //   var marker = new window.google.maps.Marker({position: harrods, map: map});
+//Create infowindow
+// let infowindow = new window.google.maps.InfoWindow();
+
+
+// //Display Dynamic Markers
+// this.state.venues.map(myVenue => {
+  
+    
+//   //create markers
+//   let marker = new window.google.maps.Marker({position: harrods, map: map});
+//   for (var i = 0; i < results.features.length; i++) {
+//     var coords = results.features[i].geometry.coordinates;
+//     var latLng = new google.maps.LatLng(coords[1],coords[0]);
+//     var marker = new google.maps.Marker({
+//       position: latLng,
+//       map: map
+//     });
+//   }
+
+// //infowindow content
+// let contentString = `This is ${myVenue.name}`;
+
+//   //click on a marker
+//   marker.addListener('click', function() {
+//     //change content
+//     infowindow.setContent(contentString);
+
+//     //open infowindow
+//     infowindow.open(map, marker);
+//   });
+// });
+
+      
    
     }
     else {
