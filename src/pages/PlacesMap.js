@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import PlacesList from './ListPlaces';
+import PlacesList from '../components/Places/PlacesList';
 import { placesDB } from '../components/Places/PlacesDB';
-
+import Map from '../components/Map/Map';
+import './placesmap.css';
 
 class PlacesMap extends Component {
   state = {
@@ -10,9 +11,16 @@ class PlacesMap extends Component {
 
   render() {
     return (
-      <div>
+      <div className="places-map-container">
+      <div className="row">
+        <div className="col-4">
         <PlacesList places={this.state.places} />
+        </div>
+        <div className="col-8">
+        <Map />
+        </div>
       </div>
+    </div>
     );
   }
 }
