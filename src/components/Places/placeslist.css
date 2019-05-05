@@ -1,0 +1,43 @@
+.places-list-container {
+    max-width: 40vw;
+    max-height: 100vh;
+}
+
+.vertical-align {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .vertical-align > [class^="col-"],
+  .vertical-align > [class*=" col-"] {
+    display: flex;
+    margin: 2rem;
+    align-items: center;
+    justify-content: center; /* Optional, to align inner items 
+                                horizontally inside the column */
+  }
+
+.showing-places {
+    margin-top: 1rem;
+}
+
+.showing-places span {
+    margin-right: 1rem;
+}
+
+.places-details {
+    width: 30rem;
+}
+
+.card {
+    max-width: 30vw ;
+    margin: 2rem;
+
+}
+
+
+ol  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
