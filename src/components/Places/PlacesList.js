@@ -44,10 +44,11 @@ class PlacesList extends Component {
                         type="text"
                         placeholder="search places"
                         value={this.state.query}
-                        
+                        onChange={event => this.updateQuery(event.target.value)}
                     />
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
-                    onClick={event => this.updateQuery(event.target.value)}>Search</button>
+
+    {/* PlacesList.js-To-DO-LINE-50*** connect the search button below to search bar */}
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                     {showingPlaces.length !== places.length && (
                         <div className="showing-places">
                             <span>
