@@ -62,8 +62,7 @@ class Map extends React.Component {
     });
   }
 
-  //To-DO
-  //add infowindow content as seperate entity 
+  //Map.js-To-DO-LINE-65*** add infowindow content as seperate entity 
  
     }
     else {
