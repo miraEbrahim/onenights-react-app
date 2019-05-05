@@ -62,42 +62,9 @@ class Map extends React.Component {
     });
   }
 
-
-    //   var marker = new window.google.maps.Marker({position: harrods, map: map});
-//Create infowindow
-// let infowindow = new window.google.maps.InfoWindow();
-
-
-// //Display Dynamic Markers
-// this.state.venues.map(myVenue => {
-  
-    
-//   //create markers
-//   let marker = new window.google.maps.Marker({position: harrods, map: map});
-//   for (var i = 0; i < results.features.length; i++) {
-//     var coords = results.features[i].geometry.coordinates;
-//     var latLng = new google.maps.LatLng(coords[1],coords[0]);
-//     var marker = new google.maps.Marker({
-//       position: latLng,
-//       map: map
-//     });
-//   }
-
-// //infowindow content
-// let contentString = `This is ${myVenue.name}`;
-
-//   //click on a marker
-//   marker.addListener('click', function() {
-//     //change content
-//     infowindow.setContent(contentString);
-
-//     //open infowindow
-//     infowindow.open(map, marker);
-//   });
-// });
-
-      
-   
+  //To-DO
+  //add infowindow content as seperate entity 
+ 
     }
     else {
       //logging Map Error handeling 
