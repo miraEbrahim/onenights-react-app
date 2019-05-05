@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../../UI/Header';
 import Footer from '../../UI/Footer';
+import Album from '../album/Album';
 
 class Blog extends Component {
 render() {
