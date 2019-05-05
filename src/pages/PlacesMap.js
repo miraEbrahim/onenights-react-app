@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import PlacesList from './components/Places/PlacesList';
-import { placesDB } from './components/Places/PlacesDB';
+import PlacesList from './ListPlaces';
+import { placesDB } from '../components/Places/PlacesDB';
 
 
-class App extends Component {
+class PlacesMap extends Component {
   state = {
     places: placesDB
   }
@@ -17,4 +17,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default PlacesMap;
