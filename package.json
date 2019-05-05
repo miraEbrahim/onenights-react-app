@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-brands-svg-icons": "^5.8.1",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "escape-string-regexp": "^2.0.0",
     "lint-staged": "^8.1.6",
     "prop-types": "^15.7.2",
