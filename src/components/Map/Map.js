@@ -6,7 +6,7 @@ import { faSearch, faBars, faTimes, faDirections, faMoneyBill } from '@fortaweso
 import { fab } from '@fortawesome/free-brands-svg-icons';
 //import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { G_API, harrods, london } from './MapData';
+import { G_API, harrods } from './MapData';
 import './mapstyle.css'
 import { mapDarkStyle } from './MapStyle';
 import { placesDB } from '../Places/PlacesDB';
@@ -40,37 +40,27 @@ class Map extends React.Component {
     var obj = json[i];
 
     // Adding a new marker for the object
-    var marker = new window.google.maps.Marker({
+    let marker = new window.google.maps.Marker({
       position: new window.google.maps.LatLng(obj.geometry.location.lat,obj.geometry.location.lng),
       map: map,
       title: obj.name // this works, giving the marker a title with the correct title
     });
     
     // Adding a new info window for the object
-    var clicker = addClicker(marker, obj.title);
-    
- 
-
-
+    var clicker = addClicker(marker, obj.name);
 
   } // end loop
-  
   
   // Adding a new click event listener for the object
   function addClicker(marker, content) {
     window.google.maps.event.addListener(marker, 'click', function() {
-        let infowindow = new window.google.maps.InfoWindow();
-        let contentString = `This is ${obj.name}`;
-
-           
-      if (infowindow) {infowindow.close();}
-      infowindow = new window.google.maps.InfoWindow({content: contentString});
+      let infowindow;
+      if (infowindow) {window.infowindow.close();}
+      infowindow = new window.google.maps.InfoWindow({content: content});
       infowindow.open(map, marker);
       
     });
-
   }
-
 
 
     //   var marker = new window.google.maps.Marker({position: harrods, map: map});
