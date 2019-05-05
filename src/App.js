@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PlacesList from './components/Places/PlacesList';
 import { placesDB } from './components/Places/PlacesDB';
 import Map from './components/Map/Map';
-import './pages/placesmap.css';
+import './pages/places/placesmap.css';
+
+import Blog from './pages/blog/Blog';
 
 class App extends Component {
   state = {
@@ -18,6 +20,7 @@ class App extends Component {
           </div>
           <div className="col-8">
           <Map />
+          <Blog />
           </div>
         </div>
       </div>
