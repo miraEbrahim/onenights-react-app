@@ -4,8 +4,6 @@ import { placesDB } from './components/Places/PlacesDB';
 import Map from './components/Map/Map';
 import './pages/places/placesmap.css';
 
-import Blog from './pages/blog/Blog';
-
 class App extends Component {
   state = {
     places: placesDB
@@ -20,7 +18,6 @@ class App extends Component {
           </div>
           <div className="col-8">
           <Map />
-          <Blog />
           </div>
         </div>
       </div>
